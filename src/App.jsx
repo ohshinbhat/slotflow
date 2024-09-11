@@ -11,6 +11,7 @@ import Services from './pages/Services';
 import Bookings from './pages/Bookings';
 import ProfileView from './pages/ProfileView';
 import Payments from './pages/Payments';
+import _Auth from './components/Auth';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route element={<Product />} path="/products" />
           <Route element={<Workflow />} path="/workflows" />
           <Route element={<Contact />} path="/contact" />
+          <Route element={<_Auth />} path="/auth" />
         </Route>
       </Routes>
     </div>
