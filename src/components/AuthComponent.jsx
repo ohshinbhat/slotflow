@@ -9,24 +9,29 @@ const signInWithGoogle = async () => {
 
   if (error) {
     console.error("error signing with google");
+  } else if (data.session) {
+    localStorage.setItem('supabaseSession', JSON.stringify(data.session));
   }
+
 };
 
 const AuthComponent = () => {
-  const [session, setSession] = useState(null);
+  const [session, setSession] = useState(() => {
+    const storedSession = localStorage.getItem('supabaseSession');
+    return storedSession ? JSON.parse(storedSession) : null;
+  });
 
   useEffect(() => {
-    // Check for an existing session when the component mounts
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session) {
+        localStorage.setItem('supabaseSession', JSON.stringify(session));
         setSession(session);
-        console.log("Existing session found:", session);
       } else {
-        console.log("No existing session found");
+        localStorage.removeItem('supabaseSession');
+        setSession(null);
       }
     });
 
-    // Set up a listener for auth state changes
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -38,7 +43,6 @@ const AuthComponent = () => {
       }
     });
 
-    // Clean up the subscription on unmount
     return () => subscription.unsubscribe();
   }, []);
 
