@@ -11,12 +11,11 @@ import Services from './pages/Services';
 import Bookings from './pages/Bookings';
 import ProfileView from './pages/ProfileView';
 import Payments from './pages/Payments';
-<<<<<<< HEAD
+
 import ViewProfile from './pages/clientSide/ViewProfile';
 import RedirectHandler from './utils/RedirectHandler'; // Import RedirectHandler
-=======
+
 import AuthComponent from './components/AuthComponent';
->>>>>>> 09253e1879340557d1d2c639c71305839e567b79
 
 const App = () => {
   return (
@@ -36,12 +35,10 @@ const App = () => {
           <Route element={<Product />} path="/products" />
           <Route element={<Workflow />} path="/workflows" />
           <Route element={<Contact />} path="/contact" />
-<<<<<<< HEAD
           <Route element={<RedirectHandler />} path='/redirect/:username' /> {/* Handle redirection based on username */}
           <Route element={<ViewProfile />} path='/profile/:username' />
-=======
+
           <Route element={<AuthComponent />} path="/auth" />
->>>>>>> 09253e1879340557d1d2c639c71305839e567b79
         </Route>
         
         
