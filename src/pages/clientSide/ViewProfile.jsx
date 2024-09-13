@@ -1,12 +1,12 @@
 import React from 'react'
-import ServiceCard from '../components/ServiceCard'
+import ServiceCard from '../../components/ServiceCard'
 
-const ProfileView = () => {
+const ViewProfile = () => {
   return (
     <div className='px-[100px]'>
       <div className='flex py-10 pl-14 items-center justify-center w-full'>
         <div className='flex flex-col items-center bg-[#FFFEEE] rounded-xl border-black border-[1px] px-[50px] py-5'>
-          
+         
           <div className='w-full flex flex-row items-center py-10 border-b-[1px] border-black'>
             <div className='flex-[0.25]'>
               <img src='/Images/image.png' className='h-[200px]' />
@@ -33,4 +33,4 @@ const ProfileView = () => {
   )
 }
 
-export default ProfileView
+export default ViewProfile

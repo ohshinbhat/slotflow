@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import CreateProfile from './pages/CreateProfile';
@@ -11,6 +11,8 @@ import Services from './pages/Services';
 import Bookings from './pages/Bookings';
 import ProfileView from './pages/ProfileView';
 import Payments from './pages/Payments';
+import ViewProfile from './pages/clientSide/ViewProfile';
+import RedirectHandler from './utils/RedirectHandler'; // Import RedirectHandler
 
 const App = () => {
   return (
@@ -26,10 +28,15 @@ const App = () => {
             <Route element={<Payments />} path="payments" />
             <Route element={<ProfileView />} path="profileview" />
           </Route>
+          
           <Route element={<Product />} path="/products" />
           <Route element={<Workflow />} path="/workflows" />
           <Route element={<Contact />} path="/contact" />
+          <Route element={<RedirectHandler />} path='/redirect/:username' /> {/* Handle redirection based on username */}
+          <Route element={<ViewProfile />} path='/profile/:username' />
         </Route>
+        
+        
       </Routes>
     </div>
   );
