@@ -1,5 +1,6 @@
 import React from 'react'
 import ServiceCard from '../../components/ServiceCard'
+import BookServiceCard from '../../components/BookServiceCard'
 
 const ViewProfile = () => {
   return (
@@ -19,11 +20,13 @@ const ViewProfile = () => {
 
           </div>
           <div className='py-10 flex flex-col gap-5'>
-            <ServiceCard/>
-            <ServiceCard/>
-            <ServiceCard/>
-            <ServiceCard/>
-            <ServiceCard/>
+            <BookServiceCard/>
+            <BookServiceCard/>
+            <BookServiceCard/>
+            <BookServiceCard/>
+            <BookServiceCard/>
+            <BookServiceCard/>
+
 
 
           </div>

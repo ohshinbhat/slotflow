@@ -16,7 +16,7 @@ const Navbar = () => {
           <button onClick={() => navigate('/workflows')}>WORKFLOW</button>
           <button onClick={() => navigate('/contact')}>CONTACT US</button>
         </div>
-        <button>
+        <button onClick={(e) => navigate('/auth')}>
           Sign in
         </button>
       </div>

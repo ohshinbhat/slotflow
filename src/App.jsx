@@ -16,6 +16,8 @@ import ViewProfile from './pages/clientSide/ViewProfile';
 import RedirectHandler from './utils/RedirectHandler'; // Import RedirectHandler
 
 import AuthComponent from './components/AuthComponent';
+import BookSlot from './pages/clientSide/BookSlot';
+import SlotPayment from './pages/clientSide/SlotPayment';
 
 const App = () => {
   return (
@@ -36,7 +38,13 @@ const App = () => {
           <Route element={<Workflow />} path="/workflows" />
           <Route element={<Contact />} path="/contact" />
           <Route element={<RedirectHandler />} path='/redirect/:username' /> {/* Handle redirection based on username */}
+
+          {/*client side routes */}
           <Route element={<ViewProfile />} path='/profile/:username' />
+          <Route element={<BookSlot/>} path='/bookslot' />
+          <Route element={<SlotPayment/>} path='/slotpayment' />
+
+
 
           <Route element={<AuthComponent />} path="/auth" />
         </Route>
