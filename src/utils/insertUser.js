@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { getSessionFromLocalStorage } from "./sessionUtil";
 import { supabase } from "../config/supabase";
+import checkUsername from "./checkUsername";
 
 const checkUserEmail = async (email) => {
   const { data, error } = await supabase
@@ -23,6 +24,16 @@ const insertUser = async () => {
   const userExists = await checkUserEmail(session.user.email);
 
   if (userExists) {
+    const usernameIsSet = await checkUsername(email);
+
+    if (usernameIsSet) {
+      console.log("User has a username, redirecting to /dashboard");
+      navigate("/dashboard");
+    } else {
+      console.log("Username not set, redirecting to /set-username");
+      navigate("/createProfile");
+    }
+
     console.log("User already exists, redirecting to /dashboard");
     navigate("/dashboard");
     return false;
