@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { getSessionFromLocalStorage } from "./sessionUtil";
-import { supabase } from "../config/supabase";
+import { getSessionFromLocalStorage } from "../../sessionUtil";
+import { supabase } from "../../../config/supabase";
 import checkUsername from "./checkUsername";
 
 const checkUserEmail = async (email) => {

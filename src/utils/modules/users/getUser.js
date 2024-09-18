@@ -1,4 +1,4 @@
-import { supabase } from "../config/supabase";
+import { supabase } from "../../../config/supabase";
 
 const getUser = async (email) => {
   const { data, error } = supabase

@@ -1,5 +1,5 @@
-import { supabase } from "../config/supabase";
-import { getSessionFromLocalStorage } from "./sessionUtil";
+import { supabase } from "../../../config/supabase";
+import { getSessionFromLocalStorage } from "../../sessionUtil";
 
 const updateUser = async (email, updates) => {
   const session = getSessionFromLocalStorage();
